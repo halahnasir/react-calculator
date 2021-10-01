@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import Display from './components/Display'
+import Button from './components/Button'
+import {evaluate} from 'mathjs'
+import './App.css'
 
-function App() {
+
+const App = () => {
+ 
+  const btnColor = '#f2a33c';
+  const [input, setInput] = useState("");
+  const [result, setResult] = useState("");
+
+  const addInput = (val) => {
+    setInput((input) => [...input, val]);
+  };
+
+  const reset = () => {
+    setInput('')
+    setResult('')
+  }
+
+  const calculate = () => {
+    const value = input.join('');
+    setResult(evaluate(value))
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className = 'container'>
+        <div className = 'calculator-wrapper'>
+          <Display input = {input} result = {result}/>
+          <Button value = {'Clear All'} color ={'#333'} handleClick = {reset}/>
+          <div className = 'row'>
+            <Button value = {7} handleClick = {addInput} />
+            <Button value = {8} handleClick = {addInput}/>
+            <Button value = {9} handleClick = {addInput}/>
+            <Button value = {'/'} color = {btnColor} handleClick = {addInput}/>
+          </div>
+          <div className = 'row'>
+            <Button value = {4} handleClick = {addInput}/>
+            <Button value = {5} handleClick = {addInput}/>
+            <Button value = {6} handleClick = {addInput}/>
+            <Button value = {'*'} color = {btnColor} handleClick = {addInput}/>
+          </div>
+          <div className = 'row'>
+            <Button value = {1} handleClick = {addInput}/>
+            <Button value = {2} handleClick = {addInput}/>
+            <Button value = {3} handleClick = {addInput}/>
+            <Button value = {'-'} color = {btnColor} handleClick = {addInput}/>
+          </div>
+          <div className = 'row'>
+            <Button value = {0} handleClick = {addInput}/>
+            <Button value = {'.'} handleClick = {addInput}/>
+            <Button value = {'='} handleClick = {calculate}/>
+            <Button value = {'+'} color = {btnColor} handleClick = {addInput}/>
+          </div>
+        </div>
+      </div>
+  )
 }
 
 export default App;
