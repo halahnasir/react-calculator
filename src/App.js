@@ -8,7 +8,7 @@ import './App.css'
 const App = () => {
   return (
     <CalculatorProvider>
-      <h1>Calculator</h1>
+      <h1 class='heading'>Calculator</h1>
         <div className = 'container'>
           <div className = 'calculator-wrapper'>
             <Display/>
