@@ -4,8 +4,8 @@ export const CalculatorContext = createContext();
 
 const CalculatorProvider = (props) => {
 
-    const [result, setResult] = useState('Hello');
-    const [input, setInput] = useState('Hi');
+    const [result, setResult] = useState('');
+    const [input, setInput] = useState('');
 
 
     const providerValues = {
@@ -14,8 +14,6 @@ const CalculatorProvider = (props) => {
         input, 
         setInput,
     }
-
-    
 
     return(
         <div>

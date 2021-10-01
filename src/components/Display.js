@@ -1,9 +1,10 @@
-import React from 'react'
-
+import React, {useContext} from 'react'
+import { CalculatorContext } from './CalculatorContext'
 import './Display.css'
 
-const Display = ({result, input}) => {
+const Display = () => {
    
+    const {input, result} = useContext(CalculatorContext)
     
     return (
         <div className = 'display-wrapper'>
