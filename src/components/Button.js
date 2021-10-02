@@ -46,7 +46,7 @@ const Button = ({value, color, handleClick}) => {
                 <button className = 'number' onClick = {addInput}>0</button>
                 <button className = 'number' onClick = {addInput}>.</button>
                 <button className = 'number' onClick = {calculate}>=</button>
-                <button className = 'operator' onClick = {addInput}>+</button>
+                <button className = 'operator' onClick = {addInput}>-</button>
             </div>
         </div>
     )
