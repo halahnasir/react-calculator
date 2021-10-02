@@ -17,7 +17,7 @@ const Button = ({value, color, handleClick}) => {
     
       const calculate = () => {
         const value = input.join('');
-        setResult(evaluate(value))
+        setResult(evaluate(value).ToFixed(2))
         setInput('')
       }
     
