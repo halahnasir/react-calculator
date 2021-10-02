@@ -3,7 +3,7 @@ import './Button.css'
 import { CalculatorContext } from './CalculatorContext'
 import {evaluate} from 'mathjs'
 
-const Button = ({value, color, handleClick}) => {
+const Button = () => {
     const {input, setInput, setResult} = useContext(CalculatorContext)
 
     const addInput = (e) => {
@@ -17,7 +17,7 @@ const Button = ({value, color, handleClick}) => {
     
       const calculate = () => {
         const value = input.join('');
-        setResult(evaluate(value).ToFixed(2))
+        setResult(evaluate(value).toFixed(2))
         setInput('')
       }
     
